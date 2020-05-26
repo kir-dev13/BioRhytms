@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.cotainer {
+
+}
+
+.heager__logo {
+
+}
+
+.header__burger {
+
+}
+
+.header__menu {
+
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+}
+
+.header__link a {
+  text-decoration: none;
+  font-weight: bold;
+}

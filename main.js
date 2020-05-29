@@ -1,5 +1,18 @@
 "use stricts";
 
+
+
+let leapYearsAll = [2028, 2024, 2020, 2016, 2012, 2008, 2004, 2000, 1996, 1992, 1988, 1984, 1980, 1976, 1972, 1968, 1964, 1960, 1956, 1952, 1948, 1944, 1940, 1936, 1932, 1928, 1924, 1920, 1916, 1912, 1908, 1904];
+
+
+
+let birthDate = document.querySelector('.birthDate');
+let bioCalc = document.querySelector('.btn-calc');
+bioCalc.onclick = function(event) {
+  event.preventDefault()
+let  arrayToday = today.value.split('-');
+let arrayBirthDate = birthDate.value.split('-');
+
 let sizeOfMonths = {
                     1: 31,
                     2: 28,
@@ -15,16 +28,6 @@ let sizeOfMonths = {
                     12: 31
                   };
 
-let leapYearsAll = [2028, 2024, 2020, 2016, 2012, 2008, 2004, 2000, 1996, 1992, 1988, 1984, 1980, 1976, 1972, 1968, 1964, 1960, 1956, 1952, 1948, 1944, 1940, 1936, 1932, 1928, 1924, 1920, 1916, 1912, 1908, 1904];
-
-
-
-let birthDate = document.querySelector('.birthDate');
-let bioCalc = document.querySelector('.btn-calc');
-bioCalc.onclick = function(event) {
-  event.preventDefault()
-let  arrayToday = today.value.split('-');
-let arrayBirthDate = birthDate.value.split('-');
 
 let dToday = +arrayToday[2];
 let mToday = +arrayToday[1];
@@ -35,6 +38,11 @@ let m0 = +arrayBirthDate[1];
 let y0 = +arrayBirthDate[0];
 
 
+if ( arrayBirthDate[0] == undefined || arrayBirthDate[1] == undefined || arrayBirthDate[2] == undefined || arrayToday[0] == undefined || arrayToday[1] == undefined || arrayToday[2] == undefined) {
+  document.querySelector('.daysAll').innerHTML = 'Не все поля заполнены';
+  return;
+}
+
 ////////////////////////////////////////////////////////////////////
 
 
@@ -44,57 +52,56 @@ let dDif0 = 0;
 let dDifToday = 0;
 let dDif = 0;
 
-leapYearsAll.forEach(function(item) { //Функция находит целые прошедшие високосные года с момента рождения до сегодня
-  if (yToday > item && y0 < item) {
-    leapYears.push(item);
-  }
-  //сразу добавляем по одному дню, если сейчас високосный и февраль уже прошёл. или родился в високосный до 29 февраля.
-  if ((y0 == item && m0 < 2) || (y0 == item && m0 == 2 && d0 < 29)) {
-    dDif++
-  }
-  if ((yToday == item && mToday > 2 && yToday != y0) || (yToday == item && mToday == 2 && dToday > 28 && yToday != y0)) {
-    dDif++
-  }
-});
+  leapYearsAll.forEach(function(item) { //Функция находит целые прошедшие високосные года с момента рождения до сегодня
+    if (yToday > item && y0 < item) {
+      leapYears.push(item);
+    }
+    //сразу добавляем по одному дню, если сейчас високосный и февраль уже прошёл. или родился в високосный до 29 февраля.
+    if ((y0 == item && m0 < 2) || (y0 == item && m0 == 2 && d0 < 29)) {
+      dDif++
+    }
+    if ((yToday == item && mToday > 2 && yToday != y0) || (yToday == item && mToday == 2 && dToday > 28 && yToday != y0)) {
+      dDif++
+    }
+  });
 
 getDaysReminder();
 
 let daysAll = yDif * 365 + leapYears.length + dDif;
 
-function getDaysReminder() {
-  for (let month in sizeOfMonths) { // перебираем объект sizeOfMonths и находим количество дней после дня рождения до конца года рождения
-    if (m0 < month) {
-      dDif0 += sizeOfMonths[month];
-    } else if (m0 == month) {
-      dDif0 += sizeOfMonths[month] - d0;
+  function getDaysReminder() {
+    for (let month in sizeOfMonths) { // перебираем объект sizeOfMonths и находим количество дней после дня рождения до конца года рождения
+      if (m0 < month) {
+        dDif0 += sizeOfMonths[month];
+      } else if (m0 == month) {
+        dDif0 += sizeOfMonths[month] - d0;
+      }
+      if (mToday > month) {          //здесь находим количество дней, которые прошли с начала года
+        dDifToday += sizeOfMonths[month];
+      } else if (mToday == month) {
+        dDifToday += dToday;
+      }
+      // console.log(dDifToday, dDif0, dDif);
+      console.log(sizeOfMonths[month]);
+      // console.log(dDif);
     }
-    if (mToday > month) {          //здесь находим количество дней, которые прошли с начала года
-      dDifToday += sizeOfMonths[month];
-    } else if (mToday == month) {
-      dDifToday += dToday;
-    }
+    dDif += dDifToday + dDif0;
+    return dDif;
   }
-  dDif += dDifToday + dDif0;
-  return dDif;
-}
 
 document.querySelector('.daysAll').innerHTML ='С момента рождения до рассчитываемой даты: ' + daysAll + ' дней';
 
-
-
-
-console.log(dToday);
-console.log(mToday);
-console.log(yToday); //
-console.log(d0); //
-console.log(m0); //
-console.log(y0); //
+Diagram();
+// console.log(dToday);
+// console.log(mToday);
+// console.log(yToday); //
+// console.log(d0); //
+// console.log(m0); //
+// console.log(y0); //
 // console.log(leapYears); //
 // console.log(yDif);
-console.log(daysAll);
+// console.log(daysAll);
 // console.log(dDifToday);
-// console.log(dDifToday);
-// console.log(yDif);
 // console.log(leapYears.length);
 // console.log(leapYears);
 function Diagram () {
@@ -179,10 +186,6 @@ function fillDataChart() { //Заполняем данными
 }
 
 //Ставим загрузку диаграммы на событие загрузки страницы
-bioCalc.addEventListener("click", Diagram);
-// bioCalc.onclick = function(event) {
-//   event.preventDefault()
-//   Diagram()
-// }
+// bioCalc.addEventListener("click", Diagram);
 
 }

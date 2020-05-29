@@ -82,8 +82,4 @@ function fillDataChart() { //Заполняем данными
 }
 
 //Ставим загрузку диаграммы на событие загрузки страницы
-bioCalc.addEventListener("click", Diagram);
-// bioCalc.onclick = function(event) {
-//   event.preventDefault()
-//   Diagram()
-// }
+window.addEventListener("load", Diagram);

@@ -39,12 +39,15 @@
     </header>
     <div class="content">
       <div class="content__container">
-        <div class="content__block">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea error ipsum quaerat eligendi, labore ullam neque nisi nostrum at ducimus ex mollitia, eveniet, corporis tempora adipisci non modi quas voluptas. Odit et, ducimus quas doloremque porro, sunt minus inventore iste beatae voluptatem pariatur libero? Autem, deleniti. Architecto modi, fugit atque.
+        <div class="content__block content__info">
+          <p class="content__info__text">
+            На данном сайте вы можете рассчитать три биоритма человека - физический, интеллектуальный и эмоциональный. Согласно теории о трёх биоритмах, с момента рождения человека его физический, эмоциональный и интеллектуальный энергитические центры подвержены цикличным подъёмам и спадам с периодами 23, 28 и 33 дня соответственно.
           </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea error ipsum quaerat eligendi, labore ullam neque nisi nostrum at ducimus ex mollitia, eveniet, corporis tempora adipisci non modi quas voluptas. Odit et, ducimus quas doloremque porro, sunt minus inventore iste beatae voluptatem pariatur libero? Autem, deleniti. Architecto modi, fugit atque.
+          <p class="content__info__text">
+            Автор данного ресурса не утверждает и не опровергает правдоподобность этой теории. Данный сайт был сделан с целью практики в области создания веб приложений.
+          </p>
+          <p class="content__info__text">
+            Сайт сделан с помощью HTML5, CSS3, JavaScript. Алгоритм рассчёта выполнен на JS. Графики строятся при помощи библоитеки Chart.js.
           </p>
         </div>
         <div class="content__block content__block_main">
@@ -68,12 +71,17 @@
           </div>
         </div>
         <div class="content__block">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea error ipsum quaerat eligendi, labore ullam neque nisi nostrum at ducimus ex mollitia, eveniet, corporis tempora adipisci non modi quas voluptas. Odit et, ducimus quas doloremque porro, sunt minus inventore iste beatae voluptatem pariatur libero? Autem, deleniti. Architecto modi, fugit atque.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea error ipsum quaerat eligendi, labore ullam neque nisi nostrum at ducimus ex mollitia, eveniet, corporis tempora adipisci non modi quas voluptas. Odit et, ducimus quas doloremque porro, sunt minus inventore iste beatae voluptatem pariatur libero? Autem, deleniti. Architecto modi, fugit atque.
-          </p>
+          <div class="authmenu">
+            <ul class="header__list">
+              <li class="header__listElement">Регистрация</li>
+              <li class="header__listElement"> | </li>
+              <li class="header__listElement">Аутентификация</li>
+            </ul>
+          </div>
+          <div class="input">
+            <label class="content__block__element" for="">Логин</label>
+            <input type="text" class="input-group content__block__element" placeholder="логин" name="login">
+          </div>
         </div>
       </div>
     </div>
@@ -87,10 +95,13 @@
   let y1 = date.getFullYear();
   let dateValue
   if (m1 < 10) {
-  dateValue = y1 + '-' + '0' + m1 + '-' + d1;
-  } else {
-  dateValue = y1 + '-' + m1 + '-' + d1;
+    m1 = '0' + m1;
   }
+  if (d1 < 10) {
+   d1 = '0' + d1;
+  }
+  dateValue = y1 + '-' + m1 + '-' + d1;
+
   let today = document.querySelector('input[name="today"]')
   today.value = dateValue;
 </script>

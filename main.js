@@ -81,9 +81,6 @@ let daysAll = yDif * 365 + leapYears.length + dDif;
       } else if (mToday == month) {
         dDifToday += dToday;
       }
-      // console.log(dDifToday, dDif0, dDif);
-      console.log(sizeOfMonths[month]);
-      // console.log(dDif);
     }
     dDif += dDifToday + dDif0;
     return dDif;

@@ -4,13 +4,14 @@
 
 let leapYearsAll = [2028, 2024, 2020, 2016, 2012, 2008, 2004, 2000, 1996, 1992, 1988, 1984, 1980, 1976, 1972, 1968, 1964, 1960, 1956, 1952, 1948, 1944, 1940, 1936, 1932, 1928, 1924, 1920, 1916, 1912, 1908, 1904];
 
-
-
+let today2 = document.querySelector('input[name="today"]');
 let birthDate = document.querySelector('.birthDate');
 let bioCalc = document.querySelector('.btn-calc');
-bioCalc.onclick = function(event) {
-  event.preventDefault()
-let  arrayToday = today.value.split('-');
+bioCalc.onclick = calculate;
+function calculate(event) {
+  event.preventDefault();
+  console.log("клик")
+let  arrayToday = today2.value.split('-');
 let arrayBirthDate = birthDate.value.split('-');
 
 let sizeOfMonths = {
@@ -186,3 +187,4 @@ function fillDataChart() { //Заполняем данными
 // bioCalc.addEventListener("click", Diagram);
 
 }
+

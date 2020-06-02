@@ -11,8 +11,9 @@ bioCalc.addEventListener('click', calculate);
 
 function calculate(event) {
   
-  // $.cookie('cookieBirthday', 'birthDate.value')
-  console.log(birthDate.value)
+  document.cookie =
+    `cookieName = ${birthDate.value}; max-age=86400`
+
   
   event.preventDefault();
   let  arrayToday = today2.value.split('-');

@@ -42,55 +42,30 @@
     <div class="content">
       <div class="content__container">
         <div class="content__block content__info">
-          <p class="content__info__text">
-            На данном сайте вы можете рассчитать три биоритма человека - физический, интеллектуальный и эмоциональный. Согласно теории о трёх биоритмах, с момента рождения человека его физический, эмоциональный и интеллектуальный энергитические центры подвержены цикличным подъёмам и спадам с периодами 23, 28 и 33 дня соответственно.
-          </p>
-          <p class="content__info__text">
-            Автор данного ресурса не утверждает и не опровергает правдоподобность этой теории. Данный сайт был сделан с целью практики в области создания веб приложений.
-          </p>
-          <p class="content__info__text">
-            Сайт сделан с помощью HTML5, CSS3, JavaScript. Алгоритм рассчёта выполнен на JS. Графики строятся при помощи библоитеки Chart.js.
-          </p>
+
         </div>
         <div class="content__block content__block_main">
           <div class="content__block__input">
-            <h3 class="content__block__element">Рассчёт биоритмов</h3>
-            <form action="" class="content__block__element">
-            <div class="input">
-              <label class="label content__block__element">Введите дату рождения:</label>
-              <input class="input-group content__block__element birthDate" type="date" placeholder="Дата рождения" name="birthday">
+              <h3 class="content__block__element">Рассчёт биоритмов</h3>
+              <form action="" class="content__block__element">
+              <div class="input">
+                <label class="content__block__element">Введите дату рождения:</label>
+                <input class="input-group content__block__element birthDate" type="date" placeholder="Дата рождения" name="birthday">
+              </div>
+              <div class="input">
+                <label class="content__block__element">Рассчитать для даты:</label>
+                <input class="input-group content__block__element" type="date" placeholder="Дата рождения" name="today">
+              </div>
+                <input class="content__block__element btn btn-calc" type="submit" value="Рассчитать">
+              </form>
+              <p class="content__block__element daysAll"></p>
             </div>
-            <div class="input">
-              <label class="label content__block__element">Рассчитать для даты:</label>
-              <input class="input-group content__block__element" type="date" placeholder="Дата рождения" name="today">
+            <div class="content__block__bio">
+                <canvas id="myChart" class="canvas"></canvas>
             </div>
-              <input class="content__block__element btn btn-calc" type="submit" value="Рассчитать">
-            </form>
-            <p class="content__block__element daysAll"></p>
           </div>
-          <div class="content__block__bio">
-              <canvas id="myChart" class="canvas"></canvas>
-          </div>
-        </div>
         <div class="content__block content__block__auth">
-          <div class="authmenu">
-            <ul class="header__list">
-              <li class="header__listElement">Аутентификация</li>
-              <li class="header__listElement"> | </li>
-              <li class="header__listElement"><a class="auth__link" href="">Регистрация</a></li>
-            </ul>
-          </div>
-          <form action="">
-            <div class="input">
-              <label class="label content__auth__element" for="">Логин</label>
-              <input type="text" class="input-group content__auth__element" placeholder="логин" name="login">            
-            </div>          
-            <div class="input">
-              <label class="label content__auth__element" for="">Пароль</label>
-              <input type="password" class="input-group content__auth__element" placeholder="пароль" name="pass">            
-            </div>
-            <input type="submit" class="btn btn-enter" value="Войти">
-          </form>
+
         </div>
       </div>
     </div>

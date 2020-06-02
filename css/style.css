@@ -236,6 +236,8 @@ h3 {
   background: green;
 }
 
+
+
 .btn {
   color: rgb(181, 181, 181);
   
@@ -250,6 +252,11 @@ h3 {
   outline: none;
 } 
 
+.btn-reg {
+  width: 90px;
+  margin-top: 10px;
+  background: blue;
+}
 
 .content__info {
   overflow-y: hidden;
@@ -264,6 +271,7 @@ h3 {
         height: 60px;
         /* border: 1px solid white */
     }
+
     .content__block {
       display: none;
     }
@@ -276,6 +284,10 @@ h3 {
       padding-top: 10px;
       display: block;
     }
+    .content__info {
+      display: none;
+    }
+    
   }
 
 .auth__link {

@@ -15,7 +15,7 @@ document.querySelector('.header__link__bio').onclick = (event) => {
                     inner(result);
                     abc();
                     let bioCalc = document.querySelector('.btn-calc');
-                    bioCalc.onclick = calculate;
+                    bioCalc.addEventListener('click', calculate);;
                     });
 }
 

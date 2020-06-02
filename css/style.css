@@ -227,19 +227,28 @@ h3 {
   font-size: 15px;
 }
 
+.btn-calc {
+  background: rgba(14, 0, 226, 0.5);
+}
+
+.btn-enter {
+  margin-top: 5px;
+  background: green;
+}
+
 .btn {
   color: rgb(181, 181, 181);
-  background: rgba(14, 0, 226, 0.5);
-  box-shadow: 1px 1px 1px 1px black;
+  
+  box-shadow: 1px 1px 1px 1px black; 
   width: 80px;
   height: 25px;
 }
-.btn:active {
+ .btn:active {
   box-shadow: none;
 }
 .btn:focus {
   outline: none;
-}
+} 
 
 
 .content__info {
@@ -269,6 +278,18 @@ h3 {
     }
   }
 
+.auth__link {
+  text-decoration: none;
+  color: white;
+}
+
+.input {
+  margin-top: 25px;
+}
+
+.label {
+  margin-top: 5px;
+}
 /* .canvas {
   height: 100%;
 } */

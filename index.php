@@ -57,11 +57,11 @@
             <h3 class="content__block__element">Рассчёт биоритмов</h3>
             <form action="" class="content__block__element">
             <div class="input">
-              <label class="content__block__element">Введите дату рождения:</label>
+              <label class="label content__block__element">Введите дату рождения:</label>
               <input class="input-group content__block__element birthDate" type="date" placeholder="Дата рождения" name="birthday">
             </div>
             <div class="input">
-              <label class="content__block__element">Рассчитать для даты:</label>
+              <label class="label content__block__element">Рассчитать для даты:</label>
               <input class="input-group content__block__element" type="date" placeholder="Дата рождения" name="today">
             </div>
               <input class="content__block__element btn btn-calc" type="submit" value="Рассчитать">
@@ -75,15 +75,22 @@
         <div class="content__block content__block__auth">
           <div class="authmenu">
             <ul class="header__list">
-              <li class="header__listElement">Регистрация</li>
-              <li class="header__listElement"> | </li>
               <li class="header__listElement">Аутентификация</li>
+              <li class="header__listElement"> | </li>
+              <li class="header__listElement"><a class="auth__link" href="">Регистрация</a></li>
             </ul>
           </div>
-          <div class="input">
-            <label class="content__block__element" for="">Логин</label>
-            <input type="text" class="input-group content__block__element" placeholder="логин" name="login">
-          </div>
+          <form action="">
+            <div class="input">
+              <label class="label content__auth__element" for="">Логин</label>
+              <input type="text" class="input-group content__auth__element" placeholder="логин" name="login">            
+            </div>          
+            <div class="input">
+              <label class="label content__auth__element" for="">Пароль</label>
+              <input type="password" class="input-group content__auth__element" placeholder="пароль" name="pass">            
+            </div>
+            <input type="submit" class="btn btn-enter" value="Войти">
+          </form>
         </div>
       </div>
     </div>
@@ -97,6 +104,6 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script src="menu.js" type="text/javascript"></script>
-<script src="ajax.js" ></script>
+ <script src="ajax.js" ></script> 
 </body>
 </html>

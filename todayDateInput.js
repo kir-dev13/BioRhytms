@@ -1,5 +1,6 @@
 "use strict"
 
+
 function abc() {
   let date = new Date;
   let d1 = date.getDate();
